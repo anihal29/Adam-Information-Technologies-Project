@@ -1,0 +1,57 @@
+.filter-panel {
+  margin-bottom: 20px;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.filter-panel .card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: 600;
+}
+
+.filter-panel .accordion-button {
+  font-weight: 500;
+}
+
+.filter-panel .accordion-body {
+  padding: 1rem;
+  text-align: left;
+}
+
+.filter-panel .form-check {
+  margin-bottom: 0.75rem;
+}
+
+.filter-panel .form-check-label {
+  cursor: pointer;
+}
+
+.filter-actions {
+  border-top: 1px solid #dee2e6;
+  padding-top: 1rem;
+}
+
+/* Hover color options */
+.apply-filter-button:hover{
+  background-color: #3636b3 !important;
+}
+
+.reset-filter-button{
+  background-color: rgb(205, 81, 81) !important;
+  color:white !important;
+}
+
+.reset-filter-button:hover{
+  background-color: rgb(169, 29, 29) !important;
+}
+
+
+@media (max-width: 768px) {
+  .filter-panel {
+    position: static;
+    max-height: none;
+  }
+}

@@ -1,0 +1,9 @@
+# AIT Enterprise Technology Research - Executive Summary
+
+The analyst internship team evaluated 15 technologies across three areas: Enterprise AI Platforms, Low-Code Automation Tools, and Data Analytics & BI Platforms. Each technology was reviewed on pricing, core features, security standards, and target business size. The team also developed a React-based comparison portal so users can search, filter, and sort the research rather than relying on a static report.
+
+For Enterprise AI Platforms, the research compared OpenAI, Microsoft Copilot, Claude, Gemini, and Perplexity. OpenAI ranked first for core features, Gemini first for pricing, and Microsoft Copilot first for security and enterprise governance. The research document's overall AI recommendation is Claude.
+
+For Low-Code Automation, the team compared Power Automate, UiPath, n8n, Make, and Zapier. The recommendation is to use n8n for workflow automation and AI integration because AIT's developers already hold the required skills, self-hosting can keep candidate PII within the company's security perimeter, and costs can scale efficiently with growth. Its AI agent nodes may also be embedded into AIT-ERS and packaged as a billable service. Microsoft Power Automate is the primary alternative when AIT is broadly licensed on Microsoft 365 E3/E5 and IT owns the program.
+
+For Data Analytics & BI, the team researched Power BI, Tableau, Python, R, and SQL. The recommendation is to use Microsoft Power BI for analytics and BI because it is user-friendly, familiar to Excel users, and provides most of the performance capabilities needed relative to Tableau. Python and R are recommended for general computation, statistical modeling, complex tabular data, A/B testing, and regression analysis. SQL can support database management when needed.

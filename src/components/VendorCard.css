@@ -1,0 +1,24 @@
+.vendor-card {
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.vendor-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.vendor-title-row .badge {
+  white-space: normal;
+  text-align: center;
+}
+
+.vendor-details {
+  margin-top: 1rem;
+}
+
+.rank-table {
+  margin-top: 1rem;
+}
