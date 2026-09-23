@@ -6,7 +6,7 @@ function FilterPanel({ onFilter }) {
 
   // State to track selected filters
   const [featureFilter, setFeatureFilter] = useState("");
-  const [businessSize, setBusinessSize] = useState("All");
+  const [businessSizes, setBusinessSizes] = useState([]);
   const [minPriceFilter, setMinPriceFilter] = useState("");
   const [maxPriceFilter, setMaxPriceFilter] = useState("");
   const [sortOption, setSortOption] = useState("");
@@ -15,7 +15,7 @@ function FilterPanel({ onFilter }) {
   const buildFilters = () => {
     return {
       feature: featureFilter.trim(),
-      businessSize: businessSize,
+      businessSizes: businessSizes,
       minPrice: minPriceFilter === "" ? null : Number(minPriceFilter),
       maxPrice: maxPriceFilter === "" ? null : Number(maxPriceFilter),
       sort: sortOption
@@ -33,14 +33,14 @@ function FilterPanel({ onFilter }) {
   // Handle reset filters
   const handleResetFilters = () => {
     setFeatureFilter("");
-    setBusinessSize("All");
+    setBusinessSizes([]);
     setMinPriceFilter("");
     setMaxPriceFilter("");
     setSortOption("");
     if (onFilter) {
       onFilter({
         feature: "",
-        businessSize: "All",
+        businessSizes: [],
         minPrice: null,
         maxPrice: null,
         sort: ""
@@ -54,7 +54,7 @@ function FilterPanel({ onFilter }) {
         <h2 className="mb-0 h5">Filters</h2>
       </Card.Header>
       <Card.Body>
-        <Accordion defaultActiveKey="0" flush>
+        <Accordion defaultActiveKey={ []} alwaysOpen flush>
 
           {/* Core Feature Filter */}
           <Accordion.Item eventKey="0">
@@ -83,19 +83,31 @@ function FilterPanel({ onFilter }) {
               <h3 className="h6 mb-0">Target Business Size</h3>
             </Accordion.Header>
             <Accordion.Body>
-              <Form.Select value={businessSize} onChange={(e) => setBusinessSize(e.target.value)}>
-                <option value="All">All Business Sizes</option>
-                <option value="Small">Small</option>
-                <option value="Medium">Medium</option>
-                <option value="Large">Large</option>
-                {/* <option value="Solopreneur">Solopreneur</option>
+              <Form.Check
+                type="checkbox"
+                label="Small"
+                checked={businessSizes.includes("Small")}
+                onChange={(e) => setBusinessSizes(e.target.checked ? [...businessSizes, "Small"] : businessSizes.filter((s) => s !== "Small"))}
+              />
+              <Form.Check
+                type="checkbox"
+                label="Medium"
+                checked={businessSizes.includes("Medium")}
+                onChange={(e) => setBusinessSizes(e.target.checked ? [...businessSizes, "Medium"] : businessSizes.filter((s) => s !== "Medium"))}
+              />
+              <Form.Check
+                type="checkbox"
+                label="Large"
+                checked={businessSizes.includes("Large")}
+                onChange={(e) => setBusinessSizes(e.target.checked ? [...businessSizes, "Large"] : businessSizes.filter((s) => s !== "Large"))}
+              />
+              {/* <option value="Solopreneur">Solopreneur</option>
                 <option value="Startup">Startup</option>
                 <option value="Small">Small Business</option>
                 <option value="SMB">SMB</option>
                 <option value="Mid-Market">Mid-Market</option>
                 <option value="Large">Large Enterprise</option>
                 <option value="Any business size">Any Business Size</option> */}
-              </Form.Select>
             </Accordion.Body>
           </Accordion.Item>
 

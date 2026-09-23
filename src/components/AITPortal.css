@@ -11,6 +11,13 @@ html, body {
     font-family: 'Poppins';
 }
 
+.ait-text {
+    /* color: #FFFFFF; */
+    font-family: "Lato", sans-serif;
+    font-size: 14.88px;
+    margin: 0 0 16px;
+    padding: 16px 0;
+}
 
 .ait-header h1 {
     margin-bottom: 0.5rem;

@@ -24,24 +24,27 @@ export default function AITPortal() {
         // Check if any filters are actually applied
         const hasFilters =
             filteredObj.feature ||
-            filteredObj.businessSize !== "All" ||
+            filteredObj.businessSizes.length > 0 ||
             filteredObj.minPrice !== null ||
             filteredObj.maxPrice !== null ||
             filteredObj.sort;
 
-        // if a core feature was filtered
+        // if a core feature/keyword was filtered
         if (filteredObj.feature) {
             toFilter = toFilter.filter((v) =>
                 v.features.some((f) =>
                     f.toLowerCase().includes(filteredObj.feature.toLowerCase().trim())
+                ) ||
+                v.keywords.some((k) =>
+                    k.toLowerCase().includes(filteredObj.feature.toLowerCase().trim())
                 )
             );
         }
 
         // if a target business size was filtered
-        if (filteredObj.businessSize !== "All") {
+        if (filteredObj.businessSizes.length > 0) {
             toFilter = toFilter.filter((v) =>
-                v.businessSizes.includes(filteredObj.businessSize)
+                filteredObj.businessSizes.some((size) => v.businessSizes.includes(size))
             );
         }
 
